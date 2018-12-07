@@ -1,3 +1,8 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -24,4 +29,11 @@ client.user.setGame(`ماستر تحت طلباتكم دوما :sparkling_heart:
   console.log('')
   console.log('')
 });
- 
+
+ client.on('message', message => {
+if (message.content === هلا') {
+message.author.send('**__:sparkling_heart: :gift_heart: هلا حب منور ام الشات__**')
+}
+});
+
+client.login(process.env.BOT_TOKEN);
